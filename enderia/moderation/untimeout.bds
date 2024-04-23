@@ -1,0 +1,26 @@
+$nomention
+$color[$random[111111;999999]]
+$footerIcon[$serverIcon]
+$thumbnail[$userAvatar[$findUser[$message[1;участник]]]]
+$addTimestamp
+$if[$getUserVar[userlang]==ru]
+$onlyPerms[moderatemembers;У тебя не хватает прав: "Отправлять участников подумать о своем поведении"]
+$onlyBotPerms[moderatemembers;У меня не хватает прав: "Отправлять участников подумать о своем поведении"] 
+$onlyIf[$message[<]==;Синтаксис: >untimeout <@участник>]
+$onlyIf[$isTimedOut[$findUser[$message[1;user]]]==true;Пользователь не в тайм-ауте]
+$suppressErrors[Не удалось отменить тайм-аут пользователя]
+$untimeout[$findUser[$message[1;user]]]
+$title[Отмена тайм-аута]
+$description[<@$findUser[$message[1;user]]> снова может говорить на **$serverName[$guildID]**
+Модератор: <@$authorID>]
+$else
+$onlyPerms[moderatemembers;You're missing perms: "Timeout"]
+$onlyBotPerms[moderatemembers;I'm missing perms: "Timeout"] 
+$onlyIf[$message[<]==;Syntax: >untimeout <@user>]
+$onlyIf[$isTimedOut[$findUser[$message[1;user]]]==true;User is not timed out]
+$suppressErrors[Couldn't untimeout user]
+$untimeout[$findUser[$message[1;user]]]
+$title[Untimeout]
+$description[<@$findUser[$message[1;user]]> can speak again on **$serverName[$guildID]**
+Moderator: <@$authorID>]
+$endif
