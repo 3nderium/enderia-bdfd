@@ -1,0 +1,27 @@
+$c[Unbans a user. Usage: unban <username>]
+$nomention
+$color[$random[111111;999999]]
+$footerIcon[$serverIcon]
+$thumbnail[$userAvatar[$findUser[$message[1;user]]]]
+$addTimestamp
+$if[$getUserVar[userlang]==ru]
+$onlyPerms[ban;У тебя не хватает прав: "Банить участников"]
+$onlyBotPerms[ban;У меня не хватает прав: "Банить участников"] 
+$onlyIf[$message[<]==;Синтаксис: >unban <имяпользователя>]
+$onlyIf[$isBanned[$findUser[$message[1;user]]]==true;Пользователь не забанен]
+$suppressErrors[Не удалось разбанить пользователя]
+$unban
+$title[Разбан]
+$description[<@$findUser[$message[1;user]]> был разбанен на **$serverName[$guildID]**
+Модератор: <@$authorID>]
+$else
+$onlyPerms[ban;You're missing perms: "Ban"]
+$onlyBotPerms[ban;I'm missing perms: "Ban"] 
+$onlyIf[$message[<]==;Syntax: >unban <username>]
+$onlyIf[$isTimedOut[$findUser[$message[1;user]]]==true;User is not banned]
+$suppressErrors[Couldn't unban user]
+$unban
+$title[Unban]
+$description[<@$findUser[$message[1;user]]> was unbanned on **$serverName[$guildID]**
+Moderator: <@$authorID>]
+$endif
