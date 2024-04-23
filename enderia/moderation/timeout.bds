@@ -1,0 +1,34 @@
+$nomention
+$color[$random[111111;999999]]
+$footerIcon[$serverIcon]
+$thumbnail[$userAvatar[$findUser[$message[1;user]]]]
+$addTimestamp
+$if[$getUserVar[userlang]==ru]
+$onlyPerms[moderatemembers;У тебя не хватает прав: "Отправлять участников подумать о своем поведении"]
+$onlyBotPerms[moderatemembers;У меня не хватает прав: "Отправлять участников подумать о своем поведении"] 
+$onlyIf[$rolePosition[$highestRole[$authorID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Ты не можешь отправить кого-то в тайм-аут с ролью выше/равной твоей]
+$onlyIf[$rolePosition[$highestRole[$botID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Я не могу отправить кого-то в тайм-аут с ролью выше/равной моей]
+$onlyIf[$message[<]==;Синтаксис: >timeout <@участник> <минуты> (причина)]
+$onlyIf[$findUser[$message[1;user]]!=$authorID;Нельзя отправить самого себя в тайм-аут]
+$onlyIf[$isAdmin[$findUser[$message[1;user]]]==false;Я не могу отправить администратора в тайм-аут]
+$suppressErrors[Не удалось отправить пользователя в тайм-аут]
+$timeout[$message[2;min];$findUser[$message[1;user]]]
+$title[Тайм-аут]
+$description[<@$findUser[$message[1;user]]> был отправлен подумать о своем поведении на $message[2;min] минут на **$serverName[$guildID]**
+Модератор: <@$authorID>]
+$footer[Причина: $replaceText[$replaceText[$checkCondition[$message[3;reason]==];true;нет;1];false;$message[3;reason];1]]
+$else
+$onlyPerms[moderatemembers;You're missing perms: "Timeout"]
+$onlyBotPerms[moderatemembers;I'm missing perms: "Timeout"] 
+$onlyIf[$rolePosition[$highestRole[$authorID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Ты не можешь отправить кого-то в тайм-аут с ролью выше/равной твоей]
+$onlyIf[$rolePosition[$highestRole[$botID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Я не могу отправить кого-то в тайм-аут с ролью выше/равной моей]
+$onlyIf[$message[<]==;Syntax: >timeout <@user> <minutes> (reason)]
+$onlyIf[$findUser[$message[1;user]]!=$authorID;You can't timeout yourself]
+$onlyIf[$isAdmin[$findUser[$message[1;user]]]==false;I can't timeout an admin]
+$suppressErrors[Couldn't timeout user]
+$timeout[$message[2;min];$findUser[$message[1;user]]]
+$title[Timeout]
+$description[<@$findUser[$message[1;user]]> was timed out for $message[2;min] minutes on **$serverName[$guildID]**
+Mod: <@$authorID>]
+$footer[Reason: $replaceText[$replaceText[$checkCondition[$message[3;reason]==];true;none;1];false;$message[3;reason];1]]
+$endif
