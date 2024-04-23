@@ -1,0 +1,12 @@
+$nomention
+$color[$random[991111;999999]]
+$httpGet[https://nekos.best/api/v2/baka]
+$image[$httpResult[results;0;url]]
+$footer[$httpResult[results;0;anime_name]]
+$if[$getUserVar[userlang]==ru]
+$title[💢 Бака]
+$description[<@$findUser[$message[1]]>, ты бака!]
+$else
+$title[💢 Baka]
+$description[<@$findUser[$message[1]]>, you're a baka!]
+$endif
