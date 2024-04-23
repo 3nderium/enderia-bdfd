@@ -1,0 +1,5 @@
+$nomention
+$title[Supreme]
+$image[https://api.alexflipnote.dev/supreme?text=$replaceText[$message; ;+;-1]]
+$addReactions[<:ec:1229874377890336890>]
+$addTimestamp
