@@ -1,0 +1,6 @@
+$nomention
+$title[QR]
+$image[https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=$replaceText[$message; ;+;-1]]
+$footer[$message[1;text]]
+$addTimestamp
+$addReactions[<:ec:1229874377890336890>]
