@@ -1,0 +1,12 @@
+$nomention
+$color[$random[991010;999999]]
+$httpGet[https://nekos.best/api/v2/blush]
+$image[$httpResult[results;0;url]]
+$footer[$httpResult[results;0;anime_name]]
+$if[$getUserVar[userlang]==ru]
+$title[😳 Краснеть]
+$description[<@$authorID> краснеет!]
+$else
+$title[😳 Blush]
+$description[<@$authorID> is blushing!]
+$endif
