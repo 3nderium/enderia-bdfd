@@ -1,0 +1,18 @@
+$nomention
+$if[$message[1;user]!=]
+$if[$getUserVar[userlang]==ru]
+$title[Аватар <@$findUser[$message[1;user]]>]
+$else
+$title[<@$findUser[$message[1;user]]>'s avatar]
+$endif
+$image[$userAvatar[$findUser[$message[1;user]]]]
+$elseif[$message[1;user]==]
+$if[$getUserVar[userlang]==ru]
+$title[Аватар <@$authorID>]
+$else
+$title[<@$authorID>'s avatar]
+$endif
+$image[$authorAvatar]
+$endif
+$addTimestamp
+$addReactions[<:ec:1229874377890336890>]
