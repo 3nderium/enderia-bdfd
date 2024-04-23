@@ -1,3 +1,4 @@
+$c[Untimeouts a user. Usage: untimeout <@user>]
 $nomention
 $color[$random[111111;999999]]
 $footerIcon[$serverIcon]
