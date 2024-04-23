@@ -1,6 +1,6 @@
 # enderia-bdfd
-Enderia Discord bot, built entirely on BDFD. You can copy and modify this bot however you want (see LICENSE).
-## Variables
-Enderia uses only one variable, which is `userlang`. By default it is `en`.
+Discord-бот Enderia, написан полностью на BDFD. Его можно копировать и изменять как угодно (см. LICENSE).
+## Переменные
+Enderia использует лишь одну переменную (пока что), `userlang`. Ее значение по умолчанию - `en` (английский).
 ## $onInteraction
-$onInteraction is needed for the ability to change the bot's language.
+$onInteraction нужен для способности менять язык бота.
