@@ -1,9 +1,0 @@
-$nomention
-$color[$random[111111;999999]]
-$if[$message[>;user]==]
-$image[https://vacefron.nl/api/stonks?user=$authorAvatar?size=4096]
-$elseif[$message[>;user]!=]
-$image[https://vacefron.nl/api/stonks?user=$userAvatar[$findUser[$message[1;user]]]?size=4096]
-$endif
-$addTimestamp
-$addReactions[<:ec:1229874377890336890>]
