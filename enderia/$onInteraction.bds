@@ -1,0 +1,14 @@
+$nomention
+$if[$customID==ru-$authorID]
+$removeButtons
+$setUserVar[userlang;ru]
+$ephemeral
+$author[Готово!]
+$description[Твой язык теперь **русский 🇷🇺**]
+$elseif[$customID==en-$authorID]
+$removeButtons
+$setUserVar[userlang;en]
+$ephemeral
+$author[Done!]
+$description[Your language is now **English 🇺🇸**]
+$endif
