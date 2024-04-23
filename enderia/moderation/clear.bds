@@ -1,0 +1,23 @@
+$c[Clears messages (max. 100). Usage: clear <amount>]
+$nomention
+$addTimestamp
+$deletecommand
+$deleteIn[5s]
+$if[$getUserVar[userlang]==ru]
+$addReactions[]
+$onlyPerms[managemessages;У тебя не хватает прав: "Управлять сообщениями"]
+$onlyBotPerms[managemessages;У меня не хватает прав: "Управлять сообщениями"]
+$suppressErrors[Не удалось удалить сообщения/Синтаксис: >clear <кол-во>]
+$else
+$onlyPerms[managemessages;You're missing perms: "Manage messages"]
+$onlyBotPerms[managemessages;I'm missing perms: "Manage messages"]
+$suppressErrors[Couldn't delete messages/Syntax: >clear <amount>]
+$endif
+$clear[$message]
+$if[$getUserVar[userlang]==ru]
+$title[Успешно]
+$description[Удалено $message сообщений в <#$channelID>]
+$else
+$title[Success]
+$description[Deleted $message messages in <#$channelID>]
+$endif
