@@ -1,0 +1,20 @@
+$nomention
+$color[$random[111111;999999]]
+$httpGet[https://nekos.best/api/v2/bite]
+$image[$httpResult[results;0;url]]
+$footer[$httpResult[results;0;anime_name]]
+$if[$getUserVar[userlang]==ru]
+$title[🦷 Кусь]
+$if[$message[1;user]!=]
+$description[<@$authorID> укусил(а) <@$findUser[$message[1;user]]>!]
+$elseif[$message[1;user]==]
+$description[<@$authorID> кусается!]
+$endif
+$else
+$title[🦷 Bite]
+$if[$message[1;user]!=]
+$description[<@$authorID> bit <@$findUser[$message[1;user]]>!]
+$elseif[$message[1;user]==]
+$description[<@$authorID> bites!]
+$endif
+$endif
