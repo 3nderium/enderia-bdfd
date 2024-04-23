@@ -1,0 +1,35 @@
+$c[Bans a user. Usage: ban <@user> (reason)]
+$nomention
+$footerIcon[$serverIcon]
+$thumbnail[$userAvatar[$findUser[$message[1;user]]]]
+$addTimestamp
+$color[ff0033]
+$if[$getUserVar[userlang]==ru]
+$onlyPerms[ban;У тебя не хватает прав: "Банить участников"]
+$onlyBotPerms[ban;У меня не хватает прав: "Банить участников"] 
+$onlyIf[$rolePosition[$highestRole[$authorID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Ты не можешь забанить кого-то с ролью выше/равной твоей]
+$onlyIf[$rolePosition[$highestRole[$botID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];Я не могу забанить кого-то с ролью выше/равной моей]
+$onlyIf[$message[<]==;Синтаксис: >ban <@участник> (причина)]
+$onlyIf[$findUser[$message[1;user]]!=$authorID;Нельзя забанить самого себя]
+$onlyIf[$isAdmin[$findUser[$message[1;user]]]==false;Я не могу забанить администратора]
+$suppressErrors[Не удалось забанить пользователя]
+$banID[$replaceText[$replaceText[$checkCondition[$message[2;reason]==];true;нет;-1];false;$replaceText[$message;$message[1;user]; ;1]];$message[1;user]]
+$title[Бан]
+$description[$username[$findUser[$message[1;user]]] (`$findUser[$message[1;user]]`) был забанен из **$serverName[$guildID]**
+Модератор: <@$authorID>]
+$footer[Причина: $replaceText[$replaceText[$checkCondition[$message[2;reason]==];true;нет;1];false;$message[2;reason];1]]
+$else
+$onlyPerms[ban;You're missing perms: "Ban"]
+$onlyBotPerms[ban;I'm missing perms: "Ban"] 
+$onlyIf[$rolePosition[$highestRole[$authorID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];You can't ban someone with a role higher/equal to mine]
+$onlyIf[$rolePosition[$highestRole[$botID]]<=$rolePosition[$highestRole[$findUser[$message[1;user]]]];I can't ban someone with a role higher/equal to mine]
+$onlyIf[$message[<]==;Syntax: >ban <@user> (reason)]
+$onlyIf[$findUser[$message[1;user]]!=$authorID;You can't ban yourself]
+$onlyIf[$isAdmin[$findUser[$message[1;user]]]==false;I can't ban an admin]
+$suppressErrors[Couldn't ban user]
+$banID[$replaceText[$replaceText[$checkCondition[$message[2;reason]==];true;нет;-1];false;$replaceText[$message;$message[1;user]; ;1]];$message[1;user]]
+$title[Ban]
+$description[$username[$findUser[$message[1;user]]] (`$findUser[$message[1;user]]`) was banned from **$serverName[$guildID]**
+Mod: <@$authorID>]
+$footer[Reason: $replaceText[$replaceText[$checkCondition[$message[2;reason]==];true;none;1];false;$message[2;reason];1]]
+$endif
