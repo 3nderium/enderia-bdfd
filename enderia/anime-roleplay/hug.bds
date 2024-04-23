@@ -1,0 +1,20 @@
+$nomention
+$color[$random[119911;999999]]
+$httpGet[https://nekos.best/api/v2/hug]
+$image[$httpResult[results;0;url]]
+$footer[$httpResult[results;0;anime_name]]
+$if[$getUserVar[userlang]==ru]
+$title[🤗 Объятия]
+$if[$message[1;user]!=]
+$description[<@$authorID> обнял(а) <@$findUser[$message[1;user]]>!]
+$elseif[$message[1;user]==]
+$description[<@$authorID> хочет обниматься!]
+$endif
+$else
+$title[🤗 Hugs]
+$if[$message[1;user]!=]
+$description[<@$authorID> hugged <@$findUser[$message[1;user]]>!]
+$elseif[$message[1;user]==]
+$description[<@$authorID> wants a hug!]
+$endif
+$endif
