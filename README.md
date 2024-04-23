@@ -1,3 +1,4 @@
+Russian README available [here.](./README.ru.md)
 # enderia-bdfd
 Enderia Discord bot, built entirely on BDFD. You can copy and modify this bot however you want (see [LICENSE](./LICENSE)).
 ## Variables
